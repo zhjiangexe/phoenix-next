@@ -5,9 +5,14 @@ type Data = {
   name: string
 }
 
+const list = [
+  {name: 'rock'},
+  {name: 'zero'},
+  {name: 'tsuki'}
+]
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<Array<Data>>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json(list)
 }

@@ -14,3 +14,75 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.friend {
+  display: flex;
+}
+
+.friend .photo {
+
+}
+
+.chat {
+  opacity: .6;
+  display: flex;
+}
+
+.chatLeft {
+  border: solid 1px gray;
+}
+.chatRight {
+  border: solid 1px gray;
+}
+
+.postCate {
+  display: flex;
+}
+
+
+.center {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.test {
+  /*background-color: #eee;*/
+  padding: 30px 100px;
+}
+
+.go p{
+  font-size: 20px;
+  text-indent: -2em;
+  background-color: #ccc;
+}
+/*.go p .fa{*/
+/*  width: 0.8em;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  text-indent: 0em;*/
+/*}*/
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.out {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: blue;
+}
+
+.inner {
+  position: absolute;
+  top: 22px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background-color: red;
+}
+
+.border {
+  border: 1px gray solid;
+}
