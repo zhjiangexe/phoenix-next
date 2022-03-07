@@ -30,7 +30,7 @@ const Nav = styled.nav`
   align-items: center;
 `
 const UnderNav = styled.div`
-  //height: 60px;
+  height: 60px;
 `
 const LinkList = styled.div`
   display: flex;

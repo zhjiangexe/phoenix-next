@@ -7,20 +7,43 @@ import {RiBookmarkLine, RiChat1Line} from "react-icons/ri"
 import {useTranslation, i18n} from "next-i18next"
 import dayjs from "dayjs"
 import FeedHeader from "@/pages/post/PostHeader"
+import PostMedia from "@/pages/post/PostMedia"
 
 const Container = styled.div`
   max-width: 614px;
-  border: 1px solid gray;
 `
-const Header = styled.div`
-  display: flex;
-`
-const Media = styled.div`
-  height: 100%;
-  position: relative;
+const FeedItem = styled.div`
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin-bottom: 24px;
 `
 const Func = styled.div`
 
+`
+const LikeCount = styled.div`
+  font-weight: 600;
+  font-size: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+`
+const Comments = styled.div`
+  font-size: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+`
+const ViewAllComment = styled.div`
+  font-size: 14px;
+  color: #8e8e8e;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 4px;
+`
+const PostTime = styled.div`
+  font-size: 12px;
+  color: #8e8e8e;
+  padding-left: 16px;
+  padding-right: 16px;
 `
 export default function Feed() {
   i18n?.reloadResources()
@@ -34,38 +57,34 @@ export default function Feed() {
   return <Container>
     {
       data?.items.map((post: any, index: number) =>
-        <div key={index} style={{border: "1px solid gray"}}>
+        <FeedItem key={index}>
           <FeedHeader user={post.user} id={post.id} code={post.code} location={post.location}/>
-          <Media>
-            {
-              post.media_type === 1
-                ? <Image src={post.image_versions2.candidates[0].url}
-                         height="640w"
-                         width="640w"
-                         layout="responsive"
-                />
-                : post.media_type
-            }
-          </Media>
+          <PostMedia post={post}/>
+          <div>
+            <AiOutlineHeart size="28"/>
+            <RiChat1Line size="28"/>
+            <FiSend size="28"/>
+            <RiBookmarkLine size="28"/>
+          </div>
           <Func>
-            <div>
-              <AiOutlineHeart/>
-              <RiChat1Line/>
-              <FiSend/>
-              <RiBookmarkLine/>
-            </div>
-            <div>
+            <LikeCount>
               {post.like_count} {t('countOfLike')}
-            </div>
-            <div>{post.caption.user.username} {post.caption.text}</div>
-            <div>{t('viewAllComments', {count: post.comment_count})}</div>
-            <div>{dayjs(post.caption.created_at * 1000).format('YYYY/MM/DD HH:mm')}</div>
+            </LikeCount>
+            <Comments>
+              {post.caption.user.username} {post.caption.text}
+            </Comments>
+            <ViewAllComment>
+              {t('viewAllComments', {count: post.comment_count})}
+            </ViewAllComment>
+            <PostTime>
+              {dayjs(post.caption.created_at * 1000).format('YYYY/MM/DD HH:mm')}
+            </PostTime>
             <div>
               <input type="text" placeholder={"留言"}/>
               <button>發布</button>
             </div>
           </Func>
-        </div>
+        </FeedItem>
       )
     }
   </Container>
