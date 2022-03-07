@@ -6,6 +6,8 @@ phases:
   pre_build:
     commands:
       - echo Installing dependencies
+      - npm install -g next
+      - npm install -g typescript
       - npm install
   build:
     commands:
