@@ -1,4 +1,3 @@
-const {PHASE_DEVELOPMENT_SERVER} = require('next/constants')
 const {i18n} = require('./next-i18next.config')
 /** @type {import('next').NextConfig} */
 const nextConfig = (phase, {defaultConfig}) => {
@@ -11,7 +10,8 @@ const nextConfig = (phase, {defaultConfig}) => {
             // ssr and displayName are configured by default
             styledComponents: true,
         },
-        i18n
+        i18n,
+        ignoreBuildErrors: true
     }
 }
 
