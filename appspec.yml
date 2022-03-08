@@ -16,6 +16,3 @@ hooks:
     - location: deploy_scripts/validate_server.sh
       timeout: 300
       runas: ec2-user
-
-
-  less /var/log/aws/codedeploy-agent/codedeploy-agent.log
