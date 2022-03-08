@@ -1,4 +1,4 @@
-#!/bin/bash
+source /home/ec2-user/.bash_profile
 echo starting server
 
 # here we just use npm to run the build
