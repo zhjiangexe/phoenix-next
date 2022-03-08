@@ -20,4 +20,4 @@ artifacts:
     - tsconfig.json
     - tsconfig.server.json
     - appspec.yml
-    - deploy_script/*
+    - deploy_scripts/*
