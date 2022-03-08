@@ -13,4 +13,10 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - '**/*'
+    - .next/**/*
+    - package.json
+    - next.config.js
+    - next-i18next.config.js
+    - tsconfig.json
+    - tsconfig.server.json
+    - appspec.yml
