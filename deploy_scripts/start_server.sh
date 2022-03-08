@@ -4,7 +4,7 @@ echo starting server
 # here we just use npm to run the build
 cd /home/ec2-user/my-app
 echo building application...
-sudo npm run build
+npm run build
 
 # start the application with pm2
 echo starting application...
