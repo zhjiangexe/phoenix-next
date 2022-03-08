@@ -2,7 +2,7 @@
 echo starting server
 
 # here we just use npm to run the build
-cd /var/www/nextjs
+cd /home/ec2-user/my-app
 echo building application...
 sudo npm run build
 
