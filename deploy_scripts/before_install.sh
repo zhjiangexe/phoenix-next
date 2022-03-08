@@ -7,3 +7,7 @@ export NVM_DIR="$HOME/.nvm"
 . ~/.nvm/nvm.sh
 nvm install node
 node -v
+sudo rm -rf node_modules
+sudo mkdir node_modules
+chmod -R 777 node_modules
+sudo rm -rf package-lock.json
