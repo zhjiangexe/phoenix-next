@@ -1,12 +1,7 @@
-#!/bin/bash
-echo starting server
+echo "app start ;)"
+source /home/ec2-user/.bash_profile
 
-# here we just use npm to run the build
 cd /home/ec2-user/my-app
-echo building application...
+npm install
 npm run build
-
-# start the application with pm2
-echo starting application...
-#sudo pm2 start npm -- run production
-npm run start
+npm run start > /dev/null 2> /dev/null < /dev/null &
