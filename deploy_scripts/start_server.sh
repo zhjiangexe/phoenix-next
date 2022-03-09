@@ -1,5 +1,5 @@
 echo "app start ;)"
-source /home/ec2-user/.bashrc
+source /home/ec2-user/.bash_profile
 cd /home/ec2-user/my-app
 #npm install -g next
 npm install
