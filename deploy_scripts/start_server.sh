@@ -1,5 +1,5 @@
 echo "app start ;)"
-source /home/ec2-user/.bash_profile
+#!/bin/bash
 sudo chmod -R 777 /home/ec2-user/my-app
 cd /home/ec2-user/my-app
 
