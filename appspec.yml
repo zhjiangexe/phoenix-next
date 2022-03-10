@@ -10,22 +10,22 @@ permissions:
     mode: 777
 hooks:
   ApplicationStop:
-    - location: deploy_scripts/application_stop.sh
+    - location: deploy_scripts/step1_application_stop.sh
       timeout: 300
       runas: ec2-user
   BeforeInstall:
-    - location: deploy_scripts/before_install.sh
+    - location: deploy_scripts/step2_before_install.sh
       timeout: 300
       runas: ec2-user
   AfterInstall:
-    - location: deploy_scripts/after_install.sh
+    - location: deploy_scripts/step3_after_install.sh
       timeout: 300
       runas: ec2-user
   ApplicationStart:
-    - location: deploy_scripts/start_server.sh
+    - location: deploy_scripts/step4_application_start.sh
       timeout: 300
       runas: ec2-user
   ValidateService:
-    - location: deploy_scripts/validate_server.sh
+    - location: deploy_scripts/step5_validate_server.sh
       timeout: 300
       runas: ec2-user
