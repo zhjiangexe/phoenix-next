@@ -9,6 +9,10 @@ permissions:
     owner: ec2-user
     mode: 777
 hooks:
+  ApplicationStop:
+    - location: deploy_scripts/application_stop.sh
+      timeout: 300
+      runas: ec2-user
   BeforeInstall:
     - location: deploy_scripts/before_install.sh
       timeout: 300
